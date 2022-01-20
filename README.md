@@ -4,8 +4,8 @@
 
 Come up with something to CRUD that has at least two properties. Don't get carried away (this time).
 
-1. Initialize a git repo.
-2. Initialize a Node project. Make an initial commit.
+1. Initialize a git repo. *
+2. Initialize a Node project. Make an initial commit. *
 3. Make an express app that runs. Commit.
 4. Make it render a page for "new". Commit.
 5. Make a "create" route. Commit.
