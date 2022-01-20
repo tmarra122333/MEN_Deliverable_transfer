@@ -2,6 +2,9 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const guitars = require('./models/guitars_model.js')
+
+// const music = require('./models/music_model.js');
 
 // const allProducts = products.find();
 // My variables
@@ -33,7 +36,19 @@ app.get("/", function(req, res) {
 
 app.get('/new', (req,res) =>
 res.render("new.ejs"));
-        
+
+
+app.post('/guitars', (req, res) => {
+    // Start by console logging things out here for the req, then req.body
+    guitars.create(req.body, (error, createdProduct) => {
+        if(error) console.log(error);
+        console.log(createdProduct);
+
+
+        res.redirect("/guitars");
+    })
+})
+
 app.get("/*", (req, res) => {
     const context = { error: req.error };
     return res.status(404).render("404", context);
