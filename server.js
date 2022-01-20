@@ -22,9 +22,17 @@ app.use((req, res, next) => {
 });
 
 // Routes
+
 app.get("/", function(req, res) {
     res.send("Here I am and working :)")
 })
+
+// app.get("/new", function(req, res) {
+//     res.send("Make me Work now!!")
+// })
+
+app.get('/new', (req,res) =>
+res.render("new.ejs"));
         
 app.get("/*", (req, res) => {
     const context = { error: req.error };
