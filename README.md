@@ -12,12 +12,18 @@ Come up with something to CRUD that has at least two properties. Don't get carri
 6. Have the form on "new" page post to the "create" route. Commit. *
 7. Connect express to mongo by installing and setting up mongoose. Commit once it logs a successful connection message. *
 8. Create the schema and model for your thing that you are CRUDding. Commit. *
-9. Make sure you can concisely and precisely answer these questions:
-    - What is a schema?
-    - What is a model?
-    - What is the difference?
-    - What is the relationship between them?
-10. In the "create" route, use mongoose to add a document to your databse (`.create()`) based on what is in `req.body`. If you're having issues, check: is your `req.body` `undefined`? Where does `req.body` come from? Is there something you need to add to your app to make `req.body` be defined? (Yes, there is.) Commit.
+
+9. Make sure you can concisely and precisely answer these questions: *
+    - What is a schema? 
+    Schema collects the request config files/its like a placeholder for all of the instructions to tell the database.
+    - What is a model? 
+    Model actually describes the detail of the data. 
+    - What is the difference? 
+    Difference is Schema is more of a paramater in a sense giving instruction and the Model is like an argument.
+    - What is the relationship between them? 
+    They both work concurrently to pass information to the controller.  
+
+10. In the "create" route, use mongoose to add a document to your databse (`.create()`) based on what is in `req.body`. If you're having issues, check: is your `req.body` `undefined`? Where does `req.body` come from? Is there something you need to add to your app to make `req.body` be defined? (Yes, there is.) Commit. ---
 11. Make an "index" page which displays all the models created by the app so far. Commit.
 12. The "create" route redirect to the index page *after* the model has been created. Commit.
 13. Give your app the ability to render a "show" page. Commit.
