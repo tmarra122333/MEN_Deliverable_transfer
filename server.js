@@ -4,6 +4,8 @@ const app = express();
 const methodOverride = require('method-override');
 const guitars = require('./models/guitars_model.js')
 
+require('./config/db.connection.js');
+
 // const music = require('./models/music_model.js');
 
 // const allProducts = products.find();
@@ -37,6 +39,9 @@ app.get("/", function(req, res) {
 app.get('/new', (req,res) =>
 res.render("new.ejs"));
 
+app.get('/guitars', (req,res) =>
+res.render("new.ejs"));
+
 
 app.post('/guitars', (req, res) => {
     // Start by console logging things out here for the req, then req.body
@@ -57,3 +62,6 @@ app.get("/*", (req, res) => {
 app.listen(PORT, function() {
     console.log(`I am listening on port ${PORT}`)
 });
+
+
+

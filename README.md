@@ -9,9 +9,9 @@ Come up with something to CRUD that has at least two properties. Don't get carri
 3. Make an express app that runs. Commit. *
 4. Make it render a page for "new". Commit. *
 5. Make a "create" route. Commit. * //mine is called guitar 
-6. Have the form on "new" page post to the "create" route. Commit.
-7. Connect express to mongo by installing and setting up mongoose. Commit once it logs a successful connection message.
-8. Create the schema and model for your thing that you are CRUDding. Commit.
+6. Have the form on "new" page post to the "create" route. Commit. *
+7. Connect express to mongo by installing and setting up mongoose. Commit once it logs a successful connection message. *
+8. Create the schema and model for your thing that you are CRUDding. Commit. *
 9. Make sure you can concisely and precisely answer these questions:
     - What is a schema?
     - What is a model?
