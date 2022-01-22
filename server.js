@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const guitars = require('./models/guitars_model.js')
+const controllers = require('./controllers')
 
 require('./config/db.connection.js');
 
@@ -17,7 +18,7 @@ app.set('view engine', 'ejs');
 
 // App.use for adding (This is middleware app.use)
 app.use(methodOverride('_method'))
-
+app.use("/guitars", controllers.guitars)
 
 
 app.use((req, res, next) => {    
@@ -36,23 +37,14 @@ app.get("/", function(req, res) {
 //     res.send("Make me Work now!!")
 // })
 
-app.get('/new', (req,res) =>
-res.render("new.ejs"));
-
-app.get('/guitars', (req,res) =>
-res.render("new.ejs"));
+// app.get('/new', (req,res) =>
+// res.render("new.ejs"));
 
 
-app.post('/guitars', (req, res) => {
-    // Start by console logging things out here for the req, then req.body
-    guitars.create(req.body, (error, createdProduct) => {
-        if(error) console.log(error);
-        console.log(createdProduct);
 
 
-        res.redirect("/guitars");
-    })
-})
+// app.get('/guitars', (req,res) =>
+// res.render("guitars_controller.js"));
 
 app.get("/*", (req, res) => {
     const context = { error: req.error };
