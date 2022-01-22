@@ -62,7 +62,7 @@ router.get('/new', (req,res) =>
 res.render("new.ejs"));
 
 
-
+//This is bringing me to the Show page for the designated picture!!!!!!!!! Grabbing item by id.
 router.get('/:guitarId', (req, res) => {
     Guitars.findById(req.params.guitarId, (error, foundGuitar) => {
         if (error) {
@@ -73,8 +73,46 @@ router.get('/:guitarId', (req, res) => {
     });
  });
 
+ 
+ 
+ 
+ 
+ router.delete('/:guitarId', (req, res) => {
+    Guitars.findByIdAndDelete(req.params.guitarId, (error, deleteGuitar) => {
+        if(error) {
+            console.log(error);
+            res.send(error);
+        }
+
+        console.log(deleteGuitar);
+        res.redirect('/guitars')
+    })
+})
+ 
+router.get('/:guitarId/edit', (req, res)=>{
+    Guitars.findById(req.params.guitarId, (error, updatedguitar)=>{
+        if(error){
+            console.log(error);
+            res.status(404).render('404.ejs', {error: error});
+        }
+        return res.render('edit.ejs', {guitar: updatedguitar});
+    });
+  });
 
 
+  router.put('/:guitarId', (req, res) => {
+   
+    Guitars.findByIdAndUpdate(req.params.guitarId, req.body,(error, updatedGuitar) => {
+        if (error) {
+            console.log(error);
+            res.status(404).render('404.ejs', {error: error});
+        } 
+
+        console.log(updatedGuitar);
+
+        return res.redirect(`/guitars`);
+    });
+});
 
 
 module.exports = router

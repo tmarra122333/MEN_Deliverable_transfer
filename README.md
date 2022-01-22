@@ -26,8 +26,8 @@ Come up with something to CRUD that has at least two properties. Don't get carri
 10. In the "create" route, use mongoose to add a document to your databse (`.create()`) based on what is in `req.body`. If you're having issues, check: is your `req.body` `undefined`? Where does `req.body` come from? Is there something you need to add to your app to make `req.body` be defined? (Yes, there is.) Commit. **
 11. Make an "index" page which displays all the models created by the app so far. Commit. *
 12. The "create" route redirect to the index page *after* the model has been created. Commit. *
-13. Give your app the ability to render a "show" page. Commit. -----
-14. Each item on the index page should link to the "show" page for that item. Commit.
+13. Give your app the ability to render a "show" page. Commit. *-----*
+14. Each item on the index page should link to the "show" page for that item. Commit. **
 
 # Part Two. Update and Delete.
 
@@ -41,10 +41,10 @@ The client is on one side and the server is on the other side.
 
 ## **Destroy:**
 
-1. Make a delete button.
-2. Make a "destroy" route.
-3. Have the delete button send a DELETE request to the server.
-4. Make the "destroy" route delete the item from the database.
+1. Make a delete button.  *
+2. Make a "destroy" route. --
+3. Have the delete button send a DELETE request to the server. --
+4. Make the "destroy" route delete the item from the database. --
 
 > You should now have at least 15 commits.
 
