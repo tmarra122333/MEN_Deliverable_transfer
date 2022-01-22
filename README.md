@@ -23,18 +23,21 @@ Come up with something to CRUD that has at least two properties. Don't get carri
     - What is the relationship between them? 
     They both work concurrently to pass information to the controller.  
 
-10. In the "create" route, use mongoose to add a document to your databse (`.create()`) based on what is in `req.body`. If you're having issues, check: is your `req.body` `undefined`? Where does `req.body` come from? Is there something you need to add to your app to make `req.body` be defined? (Yes, there is.) Commit. ---
-11. Make an "index" page which displays all the models created by the app so far. Commit.
-12. The "create" route redirect to the index page *after* the model has been created. Commit.
-13. Give your app the ability to render a "show" page. Commit.
+10. In the "create" route, use mongoose to add a document to your databse (`.create()`) based on what is in `req.body`. If you're having issues, check: is your `req.body` `undefined`? Where does `req.body` come from? Is there something you need to add to your app to make `req.body` be defined? (Yes, there is.) Commit. **
+11. Make an "index" page which displays all the models created by the app so far. Commit. *
+12. The "create" route redirect to the index page *after* the model has been created. Commit. *
+13. Give your app the ability to render a "show" page. Commit. -----
 14. Each item on the index page should link to the "show" page for that item. Commit.
 
 # Part Two. Update and Delete.
 
 ## **Warmup:**
 
-1. Make sure you can answer this question: What does it mean to say that you are building a RESTful server?
-2. Make sure you can answer this question: What is the difference between REST and HTTP?
+1. Make sure you can answer this question: What does it mean to say that you are building a RESTful server? 
+The client is on one side and the server is on the other side.
+
+2. Make sure you can answer this question: What is the difference between REST and HTTP? REST is how HTTP is used. 
+ It implements the methods.
 
 ## **Destroy:**
 
@@ -58,11 +61,11 @@ Come up with something to CRUD that has at least two properties. Don't get carri
 
 ## **Controllers**
 
-1. If you set up your app with a controller already, great job! You can probably skip all these steps.
-2. Create a controller and `require` it and `app.use()` it in `server.js` if you haven't already.
-3. `require` your model in controller file if you haven't already.
-4. Move your RESTful routes from `server.js` to your controller file if you haven't already. Make sure it works.
-5. Remember: In each route, you no longer need the first part of the path. So like if your CRUDdable item is photos, then in your photo controlller, your URLs in your routes will no longer have `/photos` in front of them since the `app.use('/photos', photoController)` in `server.js` will "strip it out" of the URL.
+1. If you set up your app with a controller already, great job! You can probably skip all these steps. ***
+2. Create a controller and `require` it and `app.use()` it in `server.js` if you haven't already. ***
+3. `require` your model in controller file if you haven't already.   ***
+4. Move your RESTful routes from `server.js` to your controller file if you haven't already. Make sure it works.  ***
+5. Remember: In each route, you no longer need the first part of the path. So like if your CRUDdable item is photos, then in your photo controlller, your URLs in your routes will no longer have `/photos` in front of them since the `app.use('/photos', photoController)` in `server.js` will "strip it out" of the URL. ***
 
 ## **Hungry for more:**
 

@@ -63,4 +63,18 @@ res.render("new.ejs"));
 
 
 
+router.get('/:guitarId', (req, res) => {
+    Guitars.findById(req.params.guitarId, (error, foundGuitar) => {
+        if (error) {
+           console.log(error);
+           res.status(404).render('404.ejs', {error: error});
+        };
+        return res.render('show.ejs', {guitar: foundGuitar});
+    });
+ });
+
+
+
+
+
 module.exports = router
